@@ -1,0 +1,108 @@
+@import "./tailwind.css";
+
+* {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Lato";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+hr {
+  background-color: white;
+  width: 100%;
+}
+
+img {
+  height: 80px;
+  width: 180px;
+}
+
+p {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "head head head"
+    /* "body body body"
+    "subfoot subfoot subfoot" */
+    "subfootbody subfootbody subfootbody"
+    "foot foot foot";
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr auto 80px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-body {
+  grid-area: subfootbody;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, rgb(22, 39, 119) 70%, #89c8f9 70%);
+}
+
+.content-body > * {
+  flex: 1;
+}
+
+.form-wrapper {
+  /* grid-area: body; */
+  /* margin-top: 10px; */
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.footer-component {
+  width: 100%;
+  height: auto;
+  background-color: blue;
+  /* grid-area: subfoot; */
+  bottom: 0px;
+  color: white;
+  padding: 20px;
+}
+
+.circle {
+  background: url("./img/checked.png") no-repeat;
+  background-size: 20px;
+  padding-left: 6%;
+}
+
+.inside-image-left {
+  display: flex;
+}
+
+.inside-image-right {
+  display: flex;
+}
+
+@media only screen and (min-width: 900px) {
+  .App {
+    grid-template-areas:
+      "head head head head"
+      /* "subfoot subfoot body body" */
+      "subfootbody subfootbody subfootbody subfootbody"
+      "foot foot foot foot";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px 1fr 50px;
+  }
+
+  .content-body {
+    flex-direction: row-reverse;
+    padding: 2% 10%;
+  }
+}
